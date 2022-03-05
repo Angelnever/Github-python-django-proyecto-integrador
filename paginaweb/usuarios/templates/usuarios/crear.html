@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block titulo %} Agregar nuevo usuario {% endblock %}
+
+{% block contenido %}
+
+<div class="card">
+    <div class="card-header">
+        Crear un Usuario Easy Gas
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Datos del Usuario</h4>
+      {% include 'usuarios/form.html'%}
+        
+    </div>
+    <div class="card-footer text-muted">
+        <div class="contenedor">
+            <p class="copy">Easy GAS &copy; 2021</p>
+          
+            </div>
+    </div>
+</div>
+
+{% endblock %}

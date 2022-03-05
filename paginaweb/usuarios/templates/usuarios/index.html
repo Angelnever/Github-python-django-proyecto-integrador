@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block titulo %} Lista de Usuarios {% endblock %}
+
+{% block contenido %}
+
+<div class="card">
+    <div class="card-header">
+        <a name="" id="" class="btn btn-success" href="{% url 'crear'%}" role="button">Agregar nuevo usuario</a>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Usuarios</h4>
+       
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Usuario</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Password</th>
+                    <th>Direccion</th>
+                    <th>Email</th>
+                    <th>Telefono</th>
+                    
+                  
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+
+             {% for usuarios in usuarios %}
+                <tr>
+                    <td>{{ usuarios.id}}</td>
+                    <td>{{ usuarios.Usuario}}</td>
+                    <td>{{ usuarios.Nombre}}</td>
+                    <td>{{ usuarios.Apellido}}</td>
+                    <td>{{ usuarios.Password}}</td>
+                    <td>{{ usuarios.Direccion}}</td>
+                    <td>{{ usuarios.Email}}</td>
+                    <td>{{ usuarios.Telefono}}</td>
+                    
+                    <td>
+                        <a name="" id="" class="btn btn-secondary" href="{% url 'editar' usuarios.id %}" role="button">Editar</a>
+                        | 
+                        <a name="" id="" class="btn btn-danger" href="{% url 'eliminar' usuarios.id %}" role="button">Borrar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+    
+            </tbody>
+        </table>
+        
+    </div>
+    
+        
+    </div>
+    
+</div>
+
+
+
+{% endblock %}
